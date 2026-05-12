@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Page - Set A</title>
+    <style>
+        body{font-family: Arial, sans-serif; padding:18px; max-width:900px}
+        section{border-bottom:1px solid #ddd;padding:12px 0}
+        label{display:block;margin:6px 0}
+        input[type=text], input[type=number]{padding:6px;width:320px}
+        button{margin:6px 6px 6px 0}
+        .result{margin-top:6px;font-weight:600}
+        #stopwatch{font-size:1.2rem}
+    </style>
+</head>
+<body>
+    <div style="max-width:900px;margin:0 auto;padding:18px">
+        <p style="margin:0 0 12px"><a href="frontpage.html" style="color:#0b5fff;text-decoration:none">← Back to Front Page</a></p>
+        <h1 id="tasks">Set A — Tasks (1–20)</h1>
+    </div>
+
+    <!-- 1 Reverse a string -->
+    <section id="task1">
+        <strong>1. Reverse a string</strong>
+        <label>Input: <input id="s1" type="text"></label>
+        <button onclick="reverseString()">Reverse</button>
+        <div id="r1" class="result"></div>
+    </section>
+
+    <!-- 2 Extract 3rd and 4th characters -->
+    <section id="task2">
+        <strong>2. Extract 3rd and 4th characters</strong>
+        <label>Input: <input id="s2" type="text"></label>
+        <button onclick="thirdFourth()">Extract</button>
+        <div id="r2" class="result"></div>
+    </section>
+
+    <!-- 3 Longest word -->
+    <section id="task3">
+        <strong>3. Find longest word from a string</strong>
+        <label>Input: <input id="s3" type="text"></label>
+        <button onclick="longestWord()">Find</button>
+        <div id="r3" class="result"></div>
+    </section>
+
+    <!-- 4 case conversion -->
+    <section id="task4">
+        <strong>4. Swap case (UPPER↔lower)</strong>
+        <label>Input: <input id="s4" type="text"></label>
+        <button onclick="swapCase()">Swap</button>
+        <div id="r4" class="result"></div>
+    </section>
+
+    <!-- 5 index of substring -->
+    <section id="task5">
+        <strong>5. Find index of substring</strong>
+        <label>Full string: <input id="s5a" type="text"></label>
+        <label>Substring: <input id="s5b" type="text"></label>
+        <button onclick="indexOfSub()">Find Index</button>
+        <div id="r5" class="result"></div>
+    </section>
+
+    <!-- 6 count words/chars/spaces/special -->
+    <section id="task6">
+        <strong>6. Count words, characters, spaces, special symbols</strong>
+        <label>Input: <input id="s6" type="text"></label>
+        <button onclick="countTypes()">Count</button>
+        <div id="r6" class="result"></div>
+    </section>
+
+    <!-- 7 array of fruits and display third element -->
+    <section id="task7">
+        <strong>7. Array of fruits — show 3rd element</strong>
+        <button onclick="showThirdFruit()">Show 3rd Fruit</button>
+        <div id="r7" class="result"></div>
+    </section>
+
+    <!-- 8 last element from array (popup input) -->
+    <section id="task8">
+        <strong>8. Last element from array (popup)</strong>
+        <button onclick="lastFromPopup()">Enter array (comma separated)</button>
+        <div id="r8" class="result"></div>
+    </section>
+
+    <!-- 9 Find 10th character from input (popup) -->
+    <section id="task9">
+        <strong>9. 10th character from popup input</strong>
+        <button onclick="tenthCharPopup()">Enter string</button>
+        <div id="r9" class="result"></div>
+    </section>
+
+    <!-- 10 Work with arrays to store & display values (loop) -->
+    <section id="task10">
+        <strong>10. Store values in array and display (loop)</strong>
+        <label>Value: <input id="s10" type="text"></label>
+        <button onclick="pushValue()">Add</button>
+        <button onclick="showValues()">Show All</button>
+        <div id="r10" class="result"></div>
+    </section>
+
+    <!-- 11,12,13 calculator functions -->
+    <section id="task11">
+        <strong>11–13. Calculator functions</strong>
+        <label>A: <input id="a11" type="number"></label>
+        <label>B: <input id="b11" type="number"></label>
+        <label>Operation:
+            <select id="op11">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
+            </select>
+        </label>
+        <button onclick="calcOp()">Calculate (11)</button>
+        <button onclick="addTwo()">Add (12)</button>
+        <button onclick="subTwo()">Subtract (13)</button>
+        <div id="r11" class="result"></div>
+    </section>
+
+    <!-- 14 Popup allow only 10-digit mobile input -->
+    <section id="task14">
+        <strong>14. Popup: 10-digit mobile input</strong>
+        <button onclick="mobilePopup()">Enter mobile</button>
+        <div id="r14" class="result"></div>
+    </section>
+
+    <!-- 15 Popup accept two inputs and detect numeric/string case -->
+    <section id="task15">
+        <strong>15. Popup: detect numeric/string and case</strong>
+        <button onclick="detectInputsPopup()">Enter two values</button>
+        <div id="r15" class="result"></div>
+    </section>
+
+    <!-- 16 Validate: check if input contains only numbers -->
+    <section id="task16">
+        <strong>16. Validate only numbers</strong>
+        <label>Input: <input id="s16" type="text"></label>
+        <button onclick="onlyNumbers()">Validate</button>
+        <div id="r16" class="result"></div>
+    </section>
+
+    <!-- 17 Create person object -->
+    <section id="task17">
+        <strong>17. Create person object</strong>
+        <label>Name: <input id="pname" type="text"></label>
+        <label>Age: <input id="page" type="number"></label>
+        <label>Gender: <input id="pgen" type="text"></label>
+        <button onclick="makePerson()">Create Person</button>
+        <div id="r17" class="result"></div>
+    </section>
+
+    <!-- 18 Display person object values on webpage -->
+    <section id="task18">
+        <strong>18. Display person object</strong>
+        <button onclick="displayPerson()">Display Person</button>
+        <div id="r18" class="result"></div>
+    </section>
+
+    <!-- 19 Stopwatch -->
+    <section id="task19">
+        <strong>19. Stopwatch (Start/Pause/Stop/Reset)</strong>
+        <div id="stopwatch">00:00:00.000</div>
+        <button onclick="swStart()">Start</button>
+        <button onclick="swPause()">Pause</button>
+        <button onclick="swStop()">Stop</button>
+        <button onclick="swReset()">Reset</button>
+    </section>
+
+    <!-- 20 Change background color on click -->
+    <section id="task20">
+        <strong>20. Change background color</strong>
+        <button onclick="changeBg()">Change Background</button>
+    </section>
+
+    <script>
+        // Task 1
+        function reverseString(){
+            const s=document.getElementById('s1').value||'';
+            document.getElementById('r1').textContent = s.split('').reverse().join('');
+        }
+
+        // Task 2
+        function thirdFourth(){
+            const s=document.getElementById('s2').value||'';
+            document.getElementById('r2').textContent = s.length>=4? s[2]+s[3] : 'Input too short';
+        }
+
+        // Task 3
+        function longestWord(){
+            const s=document.getElementById('s3').value||'';
+            const words=s.match(/\b\w+\b/g)||[];
+            let longest=words.reduce((a,b)=> b.length>a.length?b:a,'');
+            document.getElementById('r3').textContent = longest || 'No words found';
+        }
+
+        // Task 4
+        function swapCase(){
+            const s=document.getElementById('s4').value||'';
+            let out='';
+            for(const ch of s){
+                out += ch === ch.toUpperCase() ? ch.toLowerCase() : ch.toUpperCase();
+            }
+            document.getElementById('r4').textContent = out;
+        }
+
+        // Task 5
+        function indexOfSub(){
+            const a=document.getElementById('s5a').value||'';
+            const b=document.getElementById('s5b').value||'';
+            const i = a.indexOf(b);
+            document.getElementById('r5').textContent = i>=0? 'Index: '+i : 'Not found';
+        }
+
+        // Task 6
+        function countTypes(){
+            const s=document.getElementById('s6').value||'';
+            const chars = s.length;
+            const spaces = (s.match(/\s/g)||[]).length;
+            const words = (s.match(/\b\w+\b/g)||[]).length;
+            const specials = chars - (s.match(/[a-zA-Z0-9\s]/g)||[]).length;
+            document.getElementById('r6').textContent = `Chars:${chars}, Words:${words}, Spaces:${spaces}, Special:${specials}`;
+        }
+
+        // Task 7
+        const fruits = ['Apple','Banana','Cherry','Date'];
+        function showThirdFruit(){
+            document.getElementById('r7').textContent = fruits[2] || 'No 3rd fruit';
+        }
+
+        // Task 8
+        function lastFromPopup(){
+            const v = prompt('Enter array items comma separated');
+            if(v===null) return; 
+            const arr = v.split(',').map(x=>x.trim()).filter(Boolean);
+            document.getElementById('r8').textContent = arr.length? arr[arr.length-1] : 'Empty array';
+        }
+
+        // Task 9
+        function tenthCharPopup(){
+            const v = prompt('Enter a string');
+            if(v===null) return;
+            document.getElementById('r9').textContent = v.length>=10? v[9] : 'Less than 10 chars';
+        }
+
+        // Task 10
+        const stored = [];
+        function pushValue(){
+            const v = document.getElementById('s10').value;
+            if(v!=='') stored.push(v);
+            document.getElementById('s10').value='';
+            showValues();
+        }
+        function showValues(){
+            const out = stored.length? stored.map((v,i)=> (i+1)+'. '+v).join('\n') : 'No values';
+            const el = document.getElementById('r10');
+            el.textContent = out;
+        }
+
+        // Task 11
+        function calcOp(){
+            const a = parseFloat(document.getElementById('a11').value)||0;
+            const b = parseFloat(document.getElementById('b11').value)||0;
+            const op = document.getElementById('op11').value;
+            let res;
+            if(op==='+') res=a+b;
+            else if(op==='-') res=a-b;
+            else if(op==='*') res=a*b;
+            else if(op==='/' ) res = b===0? 'Divide by zero' : a/b;
+            document.getElementById('r11').textContent = 'Result: ' + res;
+        }
+
+        // Task 12
+        function addTwo(){
+            const a = Number(document.getElementById('a11').value)||0;
+            const b = Number(document.getElementById('b11').value)||0;
+            document.getElementById('r11').textContent = 'Add: '+ (a+b);
+        }
+
+        // Task 13
+        function subTwo(){
+            const a = Number(document.getElementById('a11').value)||0;
+            const b = Number(document.getElementById('b11').value)||0;
+            document.getElementById('r11').textContent = 'Subtract: '+ (a-b);
+        }
+
+        // Task 14
+        function mobilePopup(){
+            const v = prompt('Enter 10-digit mobile number');
+            if(v===null) return;
+            const cleaned = v.replace(/\D/g,'');
+            const ok = /^\d{10}$/.test(cleaned);
+            document.getElementById('r14').textContent = ok? 'Valid mobile: '+cleaned : 'Invalid — must be 10 digits';
+        }
+
+        // Task 15
+        function detectInputsPopup(){
+            const a = prompt('Enter first value'); if(a===null) return;
+            const b = prompt('Enter second value'); if(b===null) return;
+            function analyze(x){
+                if(/^\d+$/.test(x)) return 'numeric';
+                if(/^[A-Z]+$/.test(x)) return 'UPPERCASE string';
+                if(/^[a-z]+$/.test(x)) return 'lowercase string';
+                return 'mixed/other';
+            }
+            document.getElementById('r15').textContent = `First: ${analyze(a)}; Second: ${analyze(b)}`;
+        }
+
+        // Task 16
+        function onlyNumbers(){
+            const v = document.getElementById('s16').value||'';
+            const ok = /^\d+$/.test(v);
+            document.getElementById('r16').textContent = ok? 'Only numbers' : 'Contains non-numeric characters';
+        }
+
+        // Task 17 & 18
+        let person = null;
+        function makePerson(){
+            const name = document.getElementById('pname').value||'';
+            const age = Number(document.getElementById('page').value)||0;
+            const gender = document.getElementById('pgen').value||'';
+            person = {name, age, gender};
+            document.getElementById('r17').textContent = 'Person created';
+        }
+        function displayPerson(){
+            const el = document.getElementById('r18');
+            if(!person) { el.textContent = 'No person created'; return; }
+            el.innerHTML = `Name: ${person.name}<br>Age: ${person.age}<br>Gender: ${person.gender}`;
+        }
+
+        // Task 19 Stopwatch
+        let swInterval=null, swStartTs=0, swElapsed=0;
+        function renderSW(ms){
+            const d = new Date(ms);
+            const hh = String(Math.floor(ms/3600000)).padStart(2,'0');
+            const mm = String(d.getUTCMinutes()).padStart(2,'0');
+            const ss = String(d.getUTCSeconds()).padStart(2,'0');
+            const ms3 = String(d.getUTCMilliseconds()).padStart(3,'0');
+            document.getElementById('stopwatch').textContent = `${hh}:${mm}:${ss}.${ms3}`;
+        }
+        function swStart(){
+            if(swInterval) return; // already running
+            swStartTs = Date.now();
+            swInterval = setInterval(()=>{
+                const now = Date.now();
+                renderSW(swElapsed + (now - swStartTs));
+            }, 31);
+        }
+        function swPause(){
+            if(!swInterval) return;
+            clearInterval(swInterval); swInterval=null;
+            swElapsed = swElapsed + (Date.now() - swStartTs);
+        }
+        function swStop(){
+            if(swInterval){ clearInterval(swInterval); swInterval=null; }
+            swElapsed = 0; swStartTs=0; renderSW(0);
+        }
+        function swReset(){
+            swElapsed = 0; swStartTs = Date.now();
+            if(!swInterval) renderSW(0);
+        }
+
+        // Task 20 change background color
+        function changeBg(){
+            const colors = ['#f8f9fa','#fff3cd','#d4edda','#f8d7da','#d1ecf1','#e2e3ff'];
+            document.body.style.background = colors[Math.floor(Math.random()*colors.length)];
+        }
+    </script>
+</body>
+</html>
